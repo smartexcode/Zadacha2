@@ -11,8 +11,13 @@ public class AnimalsCage {
     private Animal animal2;
 
     @Autowired
-    private Timer timer;
+    @Qualifier("timerBeans")
+    public Timer timer;
 
+    // вот это поставил тесты проходит, о все таки не понял как
+    public Timer getTimer() {
+        return timer;
+    }
 
     @Autowired
     public AnimalsCage(@Qualifier("meowBeans") Animal animal1,
